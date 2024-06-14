@@ -4,9 +4,34 @@ import { useState } from "react"
 import { FaFacebookF, FaLinkedinIn, FaGoogle, FaRegEnvelope } from 'react-icons/fa';
 import { MdLockOutline } from "react-icons/md";
 
+
 export default function Home() {
+
+  const [mail, setEmail] = useState(" ");
+  const [pass, setPass] = useState();
+  const [displayText , SetDisplayText] = useState("");
+
   const router = useRouter();
+
+  const handleInputChange = (e : any) => {
+    setEmail(e.target.value)
+  }
+ 
+  const handleSubmit = (e : any) => {
+    e.preventDefault()
   
+    // console.log(mail);
+    // SetDisplayText(mail)
+    // router.push("Dashboard " + mail)
+    
+    if (mail && pass) {
+      router.push(`Dashboard?mail=${encodeURIComponent(mail)}&pass=${encodeURIComponent(pass)}` );
+    }else {
+      alert('Please enter both valid value.');
+    }
+    
+  }
+
   return (
 
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
@@ -17,6 +42,11 @@ export default function Home() {
 
           <div className="w-3/5 p-5 text-black" >
             <div className="text-left font-bold"><span className="text-green-500">Peter</span>Bugs</div>
+
+            {/* <p>Display Value: {displayText}</p> */}
+
+            <form onSubmit={handleSubmit} >
+            
             <div className="py-10">
               <h2 className="text-3xl font-bold text-green-500 mb-2">Sign In to Account</h2>
               <div className="border-2 w-10 border-green-500 inline-block mb-2" ></div>
@@ -39,30 +69,35 @@ export default function Home() {
 
               <div className="flex flex-col items-center">
                 <div className="bg-gray-100 w-64 p-2 flex items-center mb-3">
-                  <FaRegEnvelope className="text-gray-400 m-2"/>
-                  <input type="email" name="email" placeholder="Email" className="bg-gray-100 outline-none text-sm flex-1"/>
+                  <FaRegEnvelope className="text-gray-400 m-2" />
+
+                  <input type="email" name="email" placeholder="Email" className="bg-gray-100 outline-none text-sm flex-1" value={mail} onChange={(e) => setEmail(e.target.value)} required/>
                 </div>
+
                 <div className="bg-gray-100 w-64 p-2 flex items-center">
-                  <MdLockOutline className="text-gray-400 m-2"/>
-                  <input type="password" name="password" placeholder="Password" className="bg-gray-100 outline-none text-sm flex-1"/>
+                  <MdLockOutline className="text-gray-400 m-2" />
+
+                  <input type="password" name="password" placeholder="Password" className="bg-gray-100 outline-none text-sm flex-1" value={pass}
+                  onChange={(e : any) => setPass(e.target.value)} required/>
                 </div>
                 <div className="flex w-64 mb-5 mt-5 justify-between">
-                <label className="flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1"/>Remember me</label>
-                <a href="#" className="text-xs">Forget Password</a>
+                  <label className="flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1" />Remember me</label>
+                  <a href="#" className="text-xs">Forget Password</a>
                 </div>
-                
+
                 {/* Button */}
-                <button className="border-2 text-green-500 border-green-500 rounded-full px-12 py-2 inline-block font-semibold hover:bg-green-500 hover:text-white hover:border-black" onClick={() => router.push("Dashboard")}>Sign In</button>
+                <button className="border-2 text-green-500 border-green-500 rounded-full px-12 py-2 inline-block font-semibold hover:bg-green-500 hover:text-white hover:border-black" type="submit"  >Sign In</button>
               </div>
 
             </div>
+            </form>
           </div> {/* Sign in Section */}
 
           <div className="w-2/5 bg-green-500 rounded-tr-2xl rounded-br-2xl py-36 px-12" >
             <h2 className="text-3xl font-bold mb-2">Hello, Friend!</h2>
             <div className="border-2 w-10 border-white inline-block mb-2" ></div>
             <p className="mb-10">Fill up personal information & start journey with us.</p>
-            
+
             <button className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-green-500 hover:border-black" onClick={() => router.push("SignUp")}>Sign Up</button>
           </div> {/* Sign Up Section */}
 
