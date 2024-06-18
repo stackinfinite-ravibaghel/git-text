@@ -1,10 +1,19 @@
 
+
 import Login from "./Login/page"
+import Dashboard from "./Dashboard/page";
+import Category from "./Component/UI/Category/page";
+
 
 export default function Home() {
   return (
-    <main >
-           {<Login />} 
+    <main className=" container flex flex-col  items-center justify-center min-h-full ">
+      
+          {<Login />}
+          {/* {<Dashboard />} */}
+          {/* {<Category />} */}
+          
+      
     </main>
   );
 }
