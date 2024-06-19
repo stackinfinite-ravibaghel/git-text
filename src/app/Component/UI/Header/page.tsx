@@ -53,7 +53,7 @@ export default function Header() {
         <a
           href="#"
           className="border-2 border-white rounded-full p-5 mx-2 bg-white static" 
-         onClick={handleSubmit}>
+          onClick={handleSubmit}>
           <TbShoppingCart className="text-xl " />
         </a>
         <span className=" flex rounded-full bg-red-500 align-top ms-12 px-2 absolute" >10</span>

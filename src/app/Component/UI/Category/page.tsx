@@ -48,7 +48,7 @@ export default function Category() {
           />
         </div>
         
-        <div className='justify-center text-center mt-2'>Mobile</div>
+        <div className='justify-center text-center mt-2 '>Mobile</div>
       </div>
       <div className="w-full justify-center  content-center bg-white rounded-md p-2 ">
         

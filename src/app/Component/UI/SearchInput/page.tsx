@@ -2,7 +2,7 @@ import { IoSearch } from "react-icons/io5";
 
 export default function SearchInput() {
   return (
-    <div className="bg-white w-min px-5 p-2 flex items-center rounded-full justify-center">
+    <div className=" bg-white w-min px-5 p-2 flex items-center rounded-full justify-center">
       <input
         type="email"
         name="email"

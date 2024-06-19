@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="inline-block flex ">
-        <span>Copyright @2024 </span> <Logo/>
+        <span className="text-2xl">Copyright @2024 </span> <Logo/>
       </div>
     </div>
   );
