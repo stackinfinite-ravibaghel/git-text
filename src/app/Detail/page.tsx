@@ -3,7 +3,9 @@ import Image from "next/image";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 export default function Detail() {
+  
   return (
+    
     <div className="flex flex-col w-full min-h-screen bg-slate-300 p-10 ">
       <div className="w-full flex flex-row bg-white rounded-md border-2 border-black py-10 px-5 ">
         <div className="flex justify-center w-2/5 rounded-md border-2 border-green-500 py-10 px-5 ">
