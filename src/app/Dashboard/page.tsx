@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import Category from "../Component/UI/Category/page";
 import ProductView from "../Component/UI/ProductView/page";
+import HorizontalScrollable from "../Component/HorizontalScrollable/page";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
@@ -25,6 +26,7 @@ export default function Dashboard() {
     <main className="flex min-h-screen flex-col items-center justify-between w-full">
       <div className="w-full">
         <Category />
+        {/* <HorizontalScrollable /> */}
 
         <div >
           <ProductView />
